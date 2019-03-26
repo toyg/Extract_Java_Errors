@@ -1,6 +1,5 @@
-
 /*
- * Copyright (c) Giacomo Lacava, 2019. 
+ * Copyright (c) Giacomo Lacava, 2019.
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -70,7 +69,7 @@ public class Main {
             List<ResourceBundle> bundles = Arrays.stream(names)
                     .map(name -> regex.matcher(name).replaceFirst("$1"))
                     .map(code -> {
-                        String correctCode = code.toLowerCase().equals("ar_ar") ? "ar_SA" : code; // idiot EPM coders got the locale wrong
+                        String correctCode = code.toLowerCase().equals("ar_ar") ? "ar_SA" : code; // EPM coders got this locale wrong ("Arabic Argentina"...)
                         return Locale.forLanguageTag(correctCode.replace("_", "-"));
                     })
                     // UTF8Control ensures UTF-8 properties files are loaded correctly
